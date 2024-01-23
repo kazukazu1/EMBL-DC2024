@@ -23,9 +23,43 @@ weight_kg <- 57
 2.2*weight_kg
 
 weight_lb <- 2.2 * weight_kg
+
+
+#Insert comment: I have to update the value of the weight_kg object
 weight_kg <- 100
 
+?sqrt
 
+sqrt(9)
+
+weight_kg <- sqrt(9)
+?round
+
+round(3.14159, digits = 2)
+round(3.14159, 2)
+#R recognizes position to accept the argument
+
+round(digits =2, x=3.14159)
+#R recognized variable to take the argument
+
+round(2,3.14159)
+#R recognizes position to accept the argument when no 
+#variables are indicated
+
+#To find the arguments within the function, you can use
+#args() function
+args(round)
+#or you can find out by typing the function without the bracket
+round
+
+my_function <- function(x){
+  
+  x <- x + 2
+  
+}
+
+
+my_function
 
 
 
