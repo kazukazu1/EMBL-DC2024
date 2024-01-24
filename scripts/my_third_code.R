@@ -8,7 +8,6 @@ library(tidyverse)
 
 #read_csv is verbose and adds NA to empty cells
 surveys <- read_csv("data_raw/portal_data_joined.csv")
-surveys <- read.csv("data_raw/portal_data_joined.csv")
 
 
 head(surveys)
@@ -91,7 +90,25 @@ as.factor(year_fct)
 
 plot(surveys$sex)
 
+#levels shows only F and M
 levels(surveys$sex)
 summary(surveys$sex)
 sex <- surveys$sex
 levels(sex)
+
+#addNA adds NA in the levels
+sex <- addNA(sex)
+levels(sex)
+
+#Replace NA to have different labels
+levels(sex)[3] <- "undetermined"
+levels(sex)
+sex
+plot(sex)
+
+levels(sex)[1:2] <- c('female','male')
+levels(sex)
+
+#change the order of levels and way its plotted
+sex <- factor(sex, levels = c("undetermined", "female", "male"))
+plot(sex)
