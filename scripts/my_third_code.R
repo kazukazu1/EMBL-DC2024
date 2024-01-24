@@ -56,3 +56,42 @@ surveys_middle<- surveys[(nrow(surveys))/2, ]
 surveys_middle
 
 #list is a simple data frame but data frame cannot always be a list
+
+str(surveys)
+surveys$sex <- factor(surveys$sex)
+
+surveys$sex
+levels(surveys$sex)
+
+
+nlevels(surveys$sex)
+
+sex <- factor(c("male", "female", "female", "male"), levels = c('male', 'female'))
+
+surveys$taxa <- factor(surveys$taxa)
+surveys$genus <- factor(surveys$genus)
+
+levels(surveys$taxa)
+summary(surveys$taxa)
+nlevels(surveys$genus)
+sum(surveys$taxa == "Rabbit")
+
+as.character(sex)
+
+
+year_fct <- factor(c(1990, 1983, 1977, 1997))
+#This outputs 
+as.numeric(year_fct)
+
+#
+as.numeric(as.character(year_fct))
+
+as.numeric(levels(year_fct))[year_fct]
+as.factor(year_fct)
+
+plot(surveys$sex)
+
+levels(surveys$sex)
+summary(surveys$sex)
+sex <- surveys$sex
+levels(sex)
